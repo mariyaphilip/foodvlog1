@@ -1,0 +1,114 @@
+
+{% load static %}
+<!DOCTYPE html>
+<!--
+Template Name: Sislaf
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="" xmlns="http://www.w3.org/1999/html">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Sislaf</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'hm/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('{% static 'hm/images/demo/backgrounds/bg3.jpg'%}');">
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left">
+        <!-- ################################################################################################ -->
+
+        <!-- ################################################################################################ -->
+<!--      </div>-->
+<!--      <div class="fl_right">-->
+<!--        &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--        <ul class="nospace">-->
+<!--          <li><a href="index.html"><i class="fas fa-home"></i></a></li>-->
+
+<!--          <li id="searchform">-->
+<!--            <div>-->
+<!--              <form action="#" method="post">-->
+<!--                <fieldset>-->
+<!--                  <legend>Quick Search:</legend>-->
+<!--                  <input type="text" placeholder="Enter search term&hellip;">-->
+<!--                  <button type="submit"><i class="fas fa-search"></i></button>-->
+<!--                </fieldset>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--        &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--      </div>-->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+        <!-- ################################################################################################ -->
+        <h1 style="color:white;"><a href="/">AVODHA SHOPPING</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="/">Home</a></li>
+          <li class="active"><a href="/">Login</a></li>
+          <li class="active"><a href="/">Register</a></li>
+           <li class="active"><a href="/">Logout</a></li>
+          <li class="active"><a href="{% url 'cartDetails' %}"><i class="fa fa-shopping-cart"></i>&nbsp;{{itc}}</a>
+
+<!--            <ul>-->
+<!--              <li><a href="{% static  'hm/pages/gallery.html' %}">Gallery</a></li>-->
+<!--              <li><a href="{% static  'hm/pages/full-width.html' %}">Full Width</a></li>-->
+<!--              <li><a href="{% static  'hm/pages/sidebar-left.html' %}">Sidebar Left</a></li>-->
+<!--              <li><a href="{% static  'hm/pages/sidebar-right.html' %}">Sidebar Right</a></li>-->
+<!--              <li><a href="{% static  'hm/pages/basic-grid.html' %}">Basic Grid</a></li>-->
+<!--              <li><a href="{% static  'hm/pages/font-icons.html' %}">Font Icons</a></li>-->
+<!--            </ul>-->
+          </li>
+        </ul>
+
+
+
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+<!--  <div id="pageintro" class="hoc clear">-->
+<!--    &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--    <article>-->
+<!--      <h3 class="heading">QUALITY FOOD ITEMS</h3>-->
+<!--      <p>Register and have a quality food items at your doorstep.</p>-->
+<!--      <footer>-->
+
+<!--      </footer>-->
+<!--    </article>-->
+<!--    &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--  </div>-->
+  <!-- ################################################################################################ -->
+<!--</div>-->
+
+
+<!--    <div class="clear"></div>-->
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

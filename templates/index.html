@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Sislaf</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'hm/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<style>
+  .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-top:-10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+<body id="top">
+
+<div class="wrapper row0">
+
+  </div>
+
+    <div id="topbar" class="hoc clear">
+        <div class="dropdown">
+  <button class="dropbtn">MENU</button>
+  <div class="dropdown-content">
+  <a href="/">ALL ITEMS</a>
+    {% for i in cat %}
+  <a href={{i.get_url}}>{{i.name}}</a>
+    {% endfor %}
+  </div>
+</div>
+      <div class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+
+
+          <li id="searchform">
+            <div>
+              <form action="{% url 'search' %}" method="get">
+                <fieldset>
+                  <legend>Quick Search:</legend>
+                  <input type="text" placeholder="Enter search item" name="q">
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+        <!-- ################################################################################################ -->
+      </div>
+
+<div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">QUALITY FOOD ITEMS</h3>
+      <p>Register and have a quality food items at your doorstep.</p>
+      <footer>
+
+      </footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+
+<div class="bgded overlay" style="background-image:url('{% static 'hm/images/demo/backgrounds/bg3.jpg'%}');">
+<!--  <div class="dropdown">-->
+<!--  <button class="dropbtn">MENU</button>-->
+<!--  <div class="dropdown-content">-->
+<!--  <a href="/">ALL ITEMS</a>-->
+<!--    {% for i in ct %}-->
+<!--  <a href={{i.get_url}}>{{i.name}}</a>-->
+<!--    {% endfor %}-->
+<!--  </div>-->
+<!--</div>-->
+</div>
+
+
+
+
+
+
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+
+    <section id="introblocks">
+      <ul class="nospace group btmspace-80">
+          {% for i in prod.object_list %}
+        <li class="one_third">
+          <figure><a class="imgover" href="{{i.get_url}}"><img src="{{i.img.url}}" alt="" style="height:250px;width:250px"></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>{{i.desc|truncatewords:17}}</p>
+              <p>Price:{{i.price}}Rs</p>
+              <p>Stock Left::{{i.stock}}</p>
+
+            </figcaption>
+          </figure>
+        </li>
+          {% endfor %}
+      </ul>
+    </section>
+  </main>
+</div>
+<div class="mx_auto">
+  {% for pg in prod.paginator.page_range %}
+  <a href="?page={{pg}}" class="btn btn-light btn-sm {% if prod.number == pg %} activate {% endif %}">{{pg}}</a>
+  {% endfor %}
+
+</div>
+</body>
+</html>
+{% endblock %}
